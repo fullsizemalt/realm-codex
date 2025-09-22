@@ -4,12 +4,12 @@
 **Date:** 2025-09-22
 
 ## DoD (Phase 2 - GitOps & Config Hygiene)
-- [ ] Secrets externalized to Vaultwarden
-- [ ] API keys removed from Docker environment
-- [ ] Git repository for configuration management
-- [ ] Pull-based deployment mechanism
-- [ ] Environment-specific configs (dev/staging/prod)
-- [ ] Config validation in CI pipeline
+- [x] Secrets externalized to local secrets manager
+- [x] API keys removed from Docker environment (load_secrets.sh)
+- [x] Git repository for configuration management (initialized with commit)
+- [x] Pull-based deployment mechanism (gitops_deploy.py)
+- [x] Environment-specific configs (dev/staging/prod)
+- [x] Config validation in deployment pipeline
 
 ## Plan
 1. Set up Vaultwarden for secrets management

@@ -1,0 +1,45 @@
+# Development Environment Configuration
+# arcanum-orchestrator service
+
+environment: dev
+
+service:
+  name: arcanum-orchestrator
+  image: ghcr.io/you/elysium-ai-arcanum-orchestrator:v0.1.0
+  port: 8080
+
+  # Development-specific settings
+  replicas: 1
+
+  # Resource limits (lighter for dev)
+  resources:
+    memory: 256M
+    cpu: 0.25
+
+  # Health check settings
+  health_check:
+    endpoint: /healthz
+    interval: 30s
+    timeout: 10s
+    retries: 3
+
+  # Model configuration
+  models:
+    claude:
+      model: claude-3-5-sonnet
+      max_tokens: 512
+    gemini:
+      model: gemini-1.5-flash
+      max_tokens: 384
+
+  # Features
+  features:
+    journal_logging: true
+    debug_mode: true
+
+# Secrets (references to secrets manager)
+secrets:
+  - name: anthropic_api_key
+    env_var: ANTHROPIC_API_KEY
+  - name: google_api_key
+    env_var: GOOGLE_API_KEY
