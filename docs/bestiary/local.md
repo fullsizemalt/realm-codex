@@ -1,0 +1,2 @@
+# {{SPIRIT_LOCAL_TITLE}}
+Summoning: `{{SPIRIT_LOCAL_SUMMON}}`

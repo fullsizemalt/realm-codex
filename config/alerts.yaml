@@ -1,0 +1,46 @@
+# Phase 1 Alert Configuration
+# Simple notification settings for arcanum-orchestrator
+
+alerts:
+  enabled: true
+
+  # Services to monitor
+  services:
+    - name: "arcanum-orchestrator"
+      health_url: "http://localhost:8080/healthz"
+      critical: true
+      check_interval: 60  # seconds
+
+  # Notification methods
+  notifications:
+    log:
+      enabled: true
+      file: "logs/alerts.log"
+
+    email:
+      enabled: false
+      # Configure these when ready
+      # smtp_server: ""
+      # smtp_port: 587
+      # from_email: ""
+      # to_email: ""
+      # username: ""
+      # password: ""
+
+    slack:
+      enabled: false
+      # webhook_url: ""
+
+  # Alert rules
+  rules:
+    service_down:
+      severity: "critical"
+      message: "Service {{ service }} is down or unreachable"
+
+    health_check_failed:
+      severity: "warning"
+      message: "Health check failed for {{ service }}"
+
+    container_restart:
+      severity: "warning"
+      message: "Container {{ service }} has restarted"

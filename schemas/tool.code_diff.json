@@ -1,0 +1,19 @@
+{
+  "name": "code_diff",
+  "description": "Return unified diff. Provide file path and minimal patch.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "path",
+      "patch"
+    ],
+    "properties": {
+      "path": {
+        "type": "string"
+      },
+      "patch": {
+        "type": "string"
+      }
+    }
+  }
+}
