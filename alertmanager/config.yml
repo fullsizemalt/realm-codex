@@ -48,5 +48,3 @@ receivers:
   webhook_configs:
   - url: 'http://host.docker.internal:8000/alerts'  # Could point to our alert manager
     send_resolved: true
-    title: 'Realm Alert - {{ .GroupLabels.alertname }}'
-    text: '{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}'
