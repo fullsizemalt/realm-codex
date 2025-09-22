@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-22T13:29:09.523884",
+  "system_status": {
+    "observability_stack": {
+      "status": "healthy",
+      "services": [],
+      "service_count": 0
+    },
+    "docker_health": {
+      "status": "error",
+      "message": "Extra data: line 2 column 1 (char 95)"
+    },
+    "disk_usage": {
+      "home_usage": "47G",
+      "realm_usage": "3.4M"
+    },
+    "agent_status": {
+      "registry_exists": true,
+      "agent_count": 2,
+      "last_updated": "2025-09-22T13:29:09.497370"
+    }
+  },
+  "uptime": "13:30  up 1 day, 18:20, 3 users, load averages: 11.93 11.58 10.92",
+  "resource_usage": {
+    "memory": "Mach Virtual Memory Statistics: (page size of 4096 bytes)\nPages free:                                3955.\nPages active:                            588633.\nPages inactive:                          586837.\nPages speculative:                         1407.\nPages throttled:                              0.\nPages wired down:                        534110.\nPages purgeable:                           2630.\n\"Translation faults\":                1194260918.\nPages copy-on-write:                   44276598.\nPages zero filled:                    570244024.\nPages reactivated:                    296124270.\nPages purged:                           3072082.\nFile-backed pages:                       323706.\nAnonymous pages:                         853171.\nPages stored in compressor:             4229973.\nPages occupied by compressor:            381642.\nDecompressions:                       166698143.\nCompressions:                         195365972.\nPageins:                               33234131.\nPageouts:                                594154.\nSwapins:                              170835300.\nSwapouts:                             173571722.\n",
+    "disk": "Filesystem       Size   Used  Avail Capacity iused    ifree %iused  Mounted on\n/dev/disk1s5s1  113Gi   14Gi  8.1Gi    64%  502388 85452440    1%   /\ndevfs           197Ki  197Ki    0Bi   100%     682        0  100%   /dev\n/dev/disk1s4    113Gi  9.0Gi  8.1Gi    53%      10 85452440    0%   /System/Volumes/VM\n/dev/disk1s2    113Gi  399Mi  8.1Gi     5%    2314 85452440    0%   /System/Volumes/Preboot\n/dev/disk1s6    113Gi  7.6Mi  8.1Gi     1%      21 85452440    0%   /System/Volumes/Update\n/dev/disk1s1    113Gi   80Gi  8.1Gi    91% 1458214 85452440    2%   /System/Volumes/Data\nmap auto_home     0Bi    0Bi    0Bi   100%       0        0  100%   /System/Volumes/Data/home\n"
+  }
+}
