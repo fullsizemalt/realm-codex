@@ -1,9 +1,34 @@
 apiVersion: 1
 
 datasources:
+  # Metrics datasource
   - name: Prometheus
     type: prometheus
     access: proxy
     url: http://prometheus:9090
     isDefault: true
     editable: true
+    jsonData:
+      timeInterval: "5s"
+
+  # Logs datasource
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    editable: true
+    jsonData:
+      maxLines: 1000
+
+  # Combined datasource for correlation
+  - name: "Prometheus + Loki"
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    editable: true
+    jsonData:
+      derivedFields:
+        - datasourceUid: loki
+          matcherRegex: "traceID=([\\w]+)"
+          name: "TraceID"
+          url: "$${__value.raw}"

@@ -1,0 +1,90 @@
+groups:
+- name: realm_alerts
+  rules:
+
+  # Service Health Alerts
+  - alert: ArcanumServiceDown
+    expr: up{job="arcanum"} == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Arcanum service is down"
+      description: "Arcanum service has been down for more than 1 minute"
+
+  - alert: ArcanumHighErrorRate
+    expr: rate(arcanum_requests_total{status!="ok"}[5m]) > 0.1
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High error rate in Arcanum service"
+      description: "Arcanum error rate is {{ $value }} errors per second"
+
+  # Resource Usage Alerts
+  - alert: HighMemoryUsage
+    expr: (container_memory_usage_bytes / container_spec_memory_limit_bytes) > 0.8
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High memory usage detected"
+      description: "Container {{ $labels.container_label_com_docker_compose_service }} is using {{ $value | humanizePercentage }} of memory"
+
+  - alert: HighCPUUsage
+    expr: rate(container_cpu_usage_seconds_total[5m]) > 0.8
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High CPU usage detected"
+      description: "Container {{ $labels.container_label_com_docker_compose_service }} CPU usage is {{ $value | humanizePercentage }}"
+
+  # Observability Stack Health
+  - alert: PrometheusTargetDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Prometheus target is down"
+      description: "Target {{ $labels.instance }} of job {{ $labels.job }} is down"
+
+  - alert: GrafanaDown
+    expr: up{job="grafana"} == 0
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Grafana is down"
+      description: "Grafana dashboard service is not responding"
+
+  - alert: LokiDown
+    expr: up{job="loki"} == 0
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Loki logging service is down"
+      description: "Centralized logging service is not available"
+
+  # Self-Healing Triggers (these will trigger remediation scripts)
+  - alert: ArcanumNeedsRestart
+    expr: up{job="arcanum"} == 0
+    for: 30s
+    labels:
+      severity: critical
+      action: restart_service
+    annotations:
+      summary: "Arcanum service needs restart"
+      description: "Service is down, triggering automated restart"
+
+  - alert: SystemResourceExhaustion
+    expr: (container_memory_usage_bytes / container_spec_memory_limit_bytes) > 0.95
+    for: 1m
+    labels:
+      severity: critical
+      action: scale_down
+    annotations:
+      summary: "System approaching resource limits"
+      description: "Memory usage at {{ $value | humanizePercentage }}, may need intervention"
