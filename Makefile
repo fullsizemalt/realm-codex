@@ -38,6 +38,13 @@ help:
 	@echo "  make cleanup-dead                - Remove dead files (dry-run by default)"
 	@echo "  make docker-cleanup              - Clean all Docker resources"
 	@echo ""
+	@echo "Codex Automation:"
+	@echo "  make codex-update                - Full automated codex update"
+	@echo "  make codex-update-dry            - Dry run codex update"
+	@echo "  make codex-status                - Show current codex status"
+	@echo "  make setup-automation            - Install local cron automation"
+	@echo "  make automation-status           - Check automation status"
+	@echo ""
 	@echo "Observability:"
 	@echo "  make observability-start         - Start monitoring stack"
 	@echo "  make observability-stop          - Stop monitoring stack"
@@ -142,6 +149,34 @@ docker-cleanup:
 	@docker image prune -f
 	@docker volume prune -f
 	@docker network prune -f
+
+# Codex Automation Commands
+codex-update:
+	@echo "🤖 Running full codex update..."
+	@python3 scripts/codex_updater.py
+
+codex-update-dry:
+	@echo "🔍 Running codex update (dry run)..."
+	@python3 scripts/codex_updater.py --dry-run
+
+codex-status:
+	@echo "📊 Current Codex Status:"
+	@echo "  Live Documentation: https://fullsizemalt.github.io/realm-codex/"
+	@echo "  Last Update: $$(git log -1 --pretty=format:'%ci' -- docs/)"
+	@echo "  Observability: $$(docker-compose ps --services | wc -l | xargs echo) services"
+	@echo "  Reports: $$(ls reports/ 2>/dev/null | wc -l | xargs echo) generated"
+	@if [ -f config/system_metrics.json ]; then \
+		echo "  Metrics: Available"; \
+	else \
+		echo "  Metrics: Not generated"; \
+	fi
+
+setup-automation:
+	@echo "🤖 Setting up codex automation..."
+	@python3 scripts/setup_cron.py install
+
+automation-status:
+	@python3 scripts/setup_cron.py status
 
 # Legacy Commands
 weave:
