@@ -12,7 +12,9 @@ spirits:
 services:
   oracle:     { name: oracle,     description: "Dashboards & metrics" }
   sanctum:    { name: sanctum,    description: "Vaults, wards, sigils" }
-  scriptorium:{ name: scriptorium,description: "Docs & Chronicle" }
+  scriptorium:
+    name: scriptorium
+    description: "Docs & Chronicle" 
   forge:      { name: forge,      description: "Build & release" }
   menagerie:  { name: menagerie,  description: "Seedboxes & media" }
   conclave:   { name: conclave,   description: "Comms & bridges" }
