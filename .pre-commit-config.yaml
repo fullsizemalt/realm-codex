@@ -4,5 +4,6 @@ repos:
       - id: docs-metadata-lint
         name: Docs metadata & attribution linter
         entry: python3 scripts/docs_metadata_lint.py docs
-        language: system
+        language: python
         pass_filenames: false
+        additional_dependencies: ['pyyaml']

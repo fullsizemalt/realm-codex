@@ -1,3 +1,15 @@
+---
+attribution:
+- Attribution Details
+author:
+- Your Name/Alias
+date: 2025-09-22
+env: all
+realm:
+- Realm Name
+title: Refactor Program Overview
+---
+
 # Refactor Program Overview
 
 A pragmatic, low-risk plan to migrate the realm to modular, self-healing, well-documented systems.
