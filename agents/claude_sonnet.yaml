@@ -1,0 +1,29 @@
+name: "spirit-claude-sonnet"
+provider: "anthropic"
+model: "claude-3-5-sonnet"
+purpose: "analysis, planning, refactor suggestions, policy reasoning"
+system_prompt_file: "../prompts/claude_system_compact.md"
+limits:
+  max_output_tokens: 512
+  temperature: 0.2
+collaboration:
+  persona: "Oracle of Clarity"
+  handoff_protocol: "../handoff/handoff_protocol.md"
+  output_contract: "../schemas/output.default.json"
+policies:
+  no_chain_of_thought: true
+  ask_clarify_only_if_blocked: true
+  cite_provenance_if_available: true
+tools:
+  - name: "search_index"
+    schema: "../schemas/tool.search.json"
+  - name: "code_diff"
+    schema: "../schemas/tool.code_diff.json"
+logging:
+  attribution: true
+  redact_secrets: true
+slo:
+  latency_p95_ms: 3000
+  success_rate: 0.97
+version: "1.0.0"
+updated: "2025-09-22"

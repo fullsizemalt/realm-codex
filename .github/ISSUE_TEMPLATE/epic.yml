@@ -1,0 +1,20 @@
+name: "Refactor Epic"
+description: Group related refactor tasks
+title: "[epic] <area>: <goal>"
+labels: ["refactor","epic"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired Outcome
+      description: "Definition of success and acceptance criteria"
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan & Phasing
+      description: "Milestones, sequencing, dependencies"
+  - type: textarea
+    id: tracking
+    attributes:
+      label: Tracking
+      description: "Link to child issues, dashboards, docs"

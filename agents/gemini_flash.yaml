@@ -1,0 +1,26 @@
+name: "spirit-gemini-flash"
+provider: "google"
+model: "gemini-1.5-flash"
+purpose: "fast drafting, summarization, classification, multimodal"
+system_prompt_file: "../prompts/gemini_system_compact.md"
+limits:
+  max_output_tokens: 384
+  temperature: 0.2
+collaboration:
+  persona: "Twin Muse"
+  handoff_protocol: "../handoff/handoff_protocol.md"
+  output_contract: "../schemas/output.default.json"
+policies:
+  keep_json_only_when_requested: true
+  no_repetition: true
+tools:
+  - name: "retrieval_batch"
+    schema: "../schemas/tool.retrieval_batch.json"
+logging:
+  attribution: true
+  redact_secrets: true
+slo:
+  latency_p95_ms: 1500
+  success_rate: 0.95
+version: "1.0.0"
+updated: "2025-09-22"

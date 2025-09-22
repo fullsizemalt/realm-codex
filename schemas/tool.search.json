@@ -1,0 +1,22 @@
+{
+  "name": "search_index",
+  "description": "Search local index; pass multiple queries in one call to minimize tokens.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "queries"
+    ],
+    "properties": {
+      "queries": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "top_k": {
+        "type": "integer",
+        "default": 5
+      }
+    }
+  }
+}

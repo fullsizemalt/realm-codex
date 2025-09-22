@@ -1,0 +1,22 @@
+name: "Operational Defect"
+description: Reliability/security defect found during refactor
+title: "[defect] <svc>/<mod>: <short>"
+labels: ["defect","refactor"]
+body:
+  - type: input
+    id: service
+    attributes:
+      label: Service/Subsystem
+      placeholder: "docs/publisher"
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Symptoms
+  - type: textarea
+    id: diagnosis
+    attributes:
+      label: Diagnosis
+  - type: textarea
+    id: fix
+    attributes:
+      label: Fix & Validation

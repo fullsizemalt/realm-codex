@@ -1,0 +1,15 @@
+{
+  "name": "arcanum-orchestrator",
+  "version": "0.1.0",
+  "owner": "ops",
+  "endpoints": [
+    "/invoke",
+    "/metrics",
+    "/healthz",
+    "/readyz",
+    "/contract.json"
+  ],
+  "metrics": [
+    "arcanum_requests_total"
+  ]
+}

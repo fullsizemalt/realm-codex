@@ -1,0 +1,28 @@
+name: Refactor DoD Gate
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  check-dod:
+    if: github.event.pull_request.changed_files > 0
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect service changes
+        id: diff
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          CHANGED=$(git diff --name-only FETCH_HEAD...HEAD | tr '\n' ' ')
+          echo "changed=$CHANGED" >> $GITHUB_OUTPUT
+      - name: Require runbook and PR checklist
+        run: |
+          echo "Changed files: ${{ steps.diff.outputs.changed }}"
+          # If services/ changed, ensure runbooks were updated
+          if echo "${{ steps.diff.outputs.changed }}" | grep -qE '^services/| services/'; then
+            echo "Services changed. Verifying runbook updates..."
+            if ! echo "${{ steps.diff.outputs.changed }}" | grep -q 'docs/runbooks/'; then
+              echo "::error ::No runbook change detected in docs/runbooks/ for service changes"
+              exit 1
+            fi
+          fi
+          echo "OK"

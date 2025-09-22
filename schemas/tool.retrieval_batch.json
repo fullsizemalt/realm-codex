@@ -1,0 +1,22 @@
+{
+  "name": "retrieval_batch",
+  "description": "Batch retrieve by IDs to save tokens.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "ids"
+    ],
+    "properties": {
+      "ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "include_snippets": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  }
+}

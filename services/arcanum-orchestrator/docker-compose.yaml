@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  arcanum:
+    build: .
+    image: ghcr.io/you/elysium-ai-arcanum-orchestrator:v0.1.0
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CLAUDE_MODEL=claude-3-5-sonnet
+      - GEMINI_MODEL=gemini-1.5-flash
+      - CLAUDE_MAX_TOKENS=512
+      - GEMINI_MAX_TOKENS=384
+      - ARCANUM_SCHEMA_PATH=schemas/output.default.json
+      - ARCANUM_APPEND_JOURNAL=true
+      - ARCANUM_CHRONICLE_PATH=../../docs/chronicle.md
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./schemas:/app/schemas
+      - ./prompts:/app/prompts
+      - ../../docs:/app/docs
+    command: ["uvicorn", "arcanum.main:app", "--host", "0.0.0.0", "--port", "8080"]

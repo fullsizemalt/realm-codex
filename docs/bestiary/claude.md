@@ -1,0 +1,2 @@
+# {{SPIRIT_CLAUDE_TITLE}}
+Summoning: `{{SPIRIT_CLAUDE_SUMMON}}`

@@ -1,0 +1,12 @@
+# Python / MkDocs
+__pycache__/
+*.pyc
+site/
+.venv/
+.env
+
+# OS
+.DS_Store
+
+# Generated aliases
+mystic_aliases.sh

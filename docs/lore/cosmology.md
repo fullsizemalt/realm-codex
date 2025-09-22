@@ -1,0 +1,3 @@
+# Cosmology
+
+The {{ORACLE_NAME}}, {{SANCTUM_NAME}}, {{SCRIPTORIUM_NAME}}, {{FORGE_NAME}}, {{MENAGERIE_NAME}}, {{CONCLAVE_NAME}}, and {{ARCANUM_NAME}} shape the Realm.

@@ -1,0 +1,19 @@
+realm_slug: elysium
+environments:
+  dev: dawn
+  stg: dusk
+  prod: zenith
+region: usw
+spirits:
+  claude: { title: "Claude — Oracle of Clarity", summoning: spirit-claude }
+  codex:  { title: "CodeX — Forge Sprite",       summoning: spirit-codex }
+  gemini: { title: "Gemini — Twin Muse",         summoning: spirit-gemini }
+  local:  { title: "House Spirits — Local LLMs", summoning: spirit-local-llama }
+services:
+  oracle:     { name: oracle,     description: "Dashboards & metrics" }
+  sanctum:    { name: sanctum,    description: "Vaults, wards, sigils" }
+  scriptorium:{ name: scriptorium,description: "Docs & Chronicle" }
+  forge:      { name: forge,      description: "Build & release" }
+  menagerie:  { name: menagerie,  description: "Seedboxes & media" }
+  conclave:   { name: conclave,   description: "Comms & bridges" }
+  arcanum:    { name: arcanum,    description: "AI orchestration" }

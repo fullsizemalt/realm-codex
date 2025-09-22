@@ -1,0 +1,24 @@
+name: "Documentation Request"
+description: Ensure new docs include required metadata
+title: "[docs] <area>: <short>"
+labels: ["docs"]
+body:
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What needs documenting and why?
+  - type: textarea
+    id: references
+    attributes:
+      label: References (Attribution)
+      description: List sources that must appear in doc front matter.
+  - type: dropdown
+    id: env
+    attributes:
+      label: Environment
+      options:
+        - dev
+        - stg
+        - prod
+        - all

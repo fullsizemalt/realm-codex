@@ -1,0 +1,40 @@
+name: "Refactor Task"
+description: Track a specific refactor item with DoD checklist
+title: "[refactor] <svc>/<mod>: <short>"
+labels: ["refactor"]
+body:
+  - type: input
+    id: service
+    attributes:
+      label: Service/Subsystem
+      placeholder: "ai/orchestrator"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & Plan
+      description: "What will change, why, and the steps (include rollback)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: Containerized with health & limits
+        - label: Logs→Loki, metrics→Prometheus, alerts
+        - label: Config & secrets in Vault/Vaultwarden
+        - label: GitOps pipeline (staging+canary+rollback)
+        - label: Runbook updated
+        - label: Ops Journal entry added
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risks & Mitigation
+      description: "What could go wrong; how to recover"
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: "PRs, dashboards, runbooks"

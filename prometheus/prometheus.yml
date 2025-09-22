@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'arcanum'
+    metrics_path: /metrics
+    static_configs:
+      # If Arcanum runs via docker-compose in services/arcanum-orchestrator:
+      - targets: ['arcanum:8080']
+    # If running Arcanum locally on the host, comment the above targets and use:
+    #  - targets: ['host.docker.internal:8080']
