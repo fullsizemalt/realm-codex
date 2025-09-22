@@ -1,2 +1,2 @@
-# {{SPIRIT_LOCAL_TITLE}}
-Summoning: `{{SPIRIT_LOCAL_SUMMON}}`
+# House Spirits — Local LLMs
+Summoning: `spirit-local-llama`

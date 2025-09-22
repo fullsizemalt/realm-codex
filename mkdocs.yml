@@ -1,5 +1,9 @@
 site_name: The Realm Codex (Unified)
 site_description: A living grimoire joined with practical runbooks
+site_url: https://your-username.github.io/your-repo-name/
+repo_url: https://github.com/your-username/your-repo-name
+repo_name: GitHub
+edit_uri: edit/master/docs/
 theme:
   name: material
   language: en
@@ -29,10 +33,10 @@ nav:
     - Naming Rites: lore/naming-rites.md
     - Rituals (Runbooks): lore/rituals.md
   - Bestiary (Spirits):
-    - {{SPIRIT_CLAUDE_TITLE}}: bestiary/claude.md
-    - {{SPIRIT_CODEX_TITLE}}: bestiary/codex.md
-    - {{SPIRIT_GEMINI_TITLE}}: bestiary/gemini.md
-    - {{SPIRIT_LOCAL_TITLE}}: bestiary/local.md
+    - Claude — Oracle of Clarity: bestiary/claude.md
+    - CodeX — Forge Sprite: bestiary/codex.md
+    - Gemini — Twin Muse: bestiary/gemini.md
+    - House Spirits — Local LLMs: bestiary/local.md
   - Grimoire (Scripts):
     - Spellbook Index: grimoire/index.md
   - Sanctum (Security): sanctum/index.md

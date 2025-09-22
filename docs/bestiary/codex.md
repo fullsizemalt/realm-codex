@@ -1,2 +1,2 @@
-# {{SPIRIT_CODEX_TITLE}}
-Summoning: `{{SPIRIT_CODEX_SUMMON}}`
+# CodeX — Forge Sprite
+Summoning: `spirit-codex`

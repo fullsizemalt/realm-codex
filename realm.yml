@@ -10,10 +10,24 @@ spirits:
   gemini: { title: "Gemini — Twin Muse",         summoning: spirit-gemini }
   local:  { title: "House Spirits — Local LLMs", summoning: spirit-local-llama }
 services:
-  oracle:     { name: oracle,     description: "Dashboards & metrics" }
-  sanctum:    { name: sanctum,    description: "Vaults, wards, sigils" }
-  scriptorium:{ name: scriptorium,description: "Docs & Chronicle" }
-  forge:      { name: forge,      description: "Build & release" }
-  menagerie:  { name: menagerie,  description: "Seedboxes & media" }
-  conclave:   { name: conclave,   description: "Comms & bridges" }
-  arcanum:    { name: arcanum,    description: "AI orchestration" }
+  oracle:
+    name: oracle
+    description: "Dashboards & metrics"
+  sanctum:
+    name: sanctum
+    description: "Vaults, wards, sigils"
+  scriptorium:
+    name: scriptorium
+    description: "Docs & Chronicle"
+  forge:
+    name: forge
+    description: "Build & release"
+  menagerie:
+    name: menagerie
+    description: "Seedboxes & & media"
+  conclave:
+    name: conclave
+    description: "Comms & bridges"
+  arcanum:
+    name: arcanum
+    description: "AI orchestration"

@@ -1,0 +1,28 @@
+updated: '2025-09-22T09:48:11.335627'
+agents:
+  spirit-claude-sonnet:
+    version: 1.0.0
+    provider: anthropic
+    model: claude-3-5-sonnet
+    purpose: analysis, planning, refactor suggestions, policy reasoning
+    slo:
+      latency_p95_ms: 3000
+      success_rate: 0.97
+    hash: null
+    file: agents/claude_sonnet.yaml
+  spirit-gemini-flash:
+    version: 1.0.0
+    provider: google
+    model: gemini-1.5-flash
+    purpose: fast drafting, summarization, classification, multimodal
+    slo:
+      latency_p95_ms: 1500
+      success_rate: 0.95
+    hash: null
+    file: agents/gemini_flash.yaml
+compatibility_matrix:
+  spirit-claude-sonnet:
+    spirit-gemini-flash: false
+  spirit-gemini-flash:
+    spirit-claude-sonnet: false
+deployment_status: {}

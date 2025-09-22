@@ -29,7 +29,7 @@ groups:
       severity: warning
     annotations:
       summary: "High memory usage detected"
-      description: "Container {{ $labels.container_label_com_docker_compose_service }} is using {{ $value | humanizePercentage }} of memory"
+      description: "Container {{ $labels.container_label_com_docker_compose_service }} is using humanizePercentage of memory"
 
   - alert: HighCPUUsage
     expr: rate(container_cpu_usage_seconds_total[5m]) > 0.8
@@ -38,7 +38,7 @@ groups:
       severity: warning
     annotations:
       summary: "High CPU usage detected"
-      description: "Container {{ $labels.container_label_com_docker_compose_service }} CPU usage is {{ $value | humanizePercentage }}"
+      description: "Container {{ $labels.container_label_com_docker_compose_service }} CPU usage is humanizePercentage"
 
   # Observability Stack Health
   - alert: PrometheusTargetDown
@@ -68,6 +68,48 @@ groups:
       summary: "Loki logging service is down"
       description: "Centralized logging service is not available"
 
+  # AI Agent SLO Monitoring
+  - alert: AgentLatencySLOViolation
+    expr: histogram_quantile(0.95, rate(agent_latency_seconds_bucket[5m])) > on(agent_name) group_left(target_latency) (agent_info{slo_latency_ms} / 1000)
+    for: 2m
+    labels:
+      severity: warning
+      component: ai_agent
+    annotations:
+      summary: "Agent {{ $labels.agent_name }} exceeding latency SLO"
+      description: "95th percentile latency is {{ $value }}s, target is {{ $labels.slo_latency_ms }}ms"
+
+  - alert: AgentSuccessRateSLOViolation
+    expr: (rate(agent_requests_total{status="success"}[5m]) / rate(agent_requests_total[5m])) < on(agent_name) group_left(target_success_rate) agent_info{slo_success_rate}
+    for: 3m
+    labels:
+      severity: warning
+      component: ai_agent
+    annotations:
+      summary: "Agent {{ $labels.agent_name }} success rate below SLO"
+      description: "Success rate is humanizePercentage, target is {{ $labels.slo_success_rate }}"
+
+  - alert: AgentHighCost
+    expr: rate(agent_cost_cents_total[1h]) > 100
+    for: 5m
+    labels:
+      severity: warning
+      component: ai_agent
+    annotations:
+      summary: "High cost detected for agent {{ $labels.agent_name }}"
+      description: "Cost rate is {{ $value }} cents/hour"
+
+  - alert: AgentCanaryRollbackNeeded
+    expr: rate(agent_requests_total{status!="success"}[2m]) > 0.05
+    for: 1m
+    labels:
+      severity: critical
+      component: ai_agent
+      action: rollback_canary
+    annotations:
+      summary: "Agent {{ $labels.agent_name }} canary deployment failing"
+      description: "Error rate humanizePercentage exceeds 5% threshold"
+
   # Self-Healing Triggers (these will trigger remediation scripts)
   - alert: ArcanumNeedsRestart
     expr: up{job="arcanum"} == 0
@@ -87,4 +129,4 @@ groups:
       action: scale_down
     annotations:
       summary: "System approaching resource limits"
-      description: "Memory usage at {{ $value | humanizePercentage }}, may need intervention"
+      description: "Memory usage at humanizePercentage, may need intervention"

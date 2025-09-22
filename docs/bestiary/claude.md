@@ -1,2 +1,2 @@
-# {{SPIRIT_CLAUDE_TITLE}}
-Summoning: `{{SPIRIT_CLAUDE_SUMMON}}`
+# Claude — Oracle of Clarity
+Summoning: `spirit-claude`

@@ -1,1 +1,1 @@
-**Realm:** {{REALM_SLUG}} — Envs: dev={{ENV_DEV}}, stg={{ENV_STG}}, prod={{ENV_PROD}} — Region: {{REGION}}
+**Realm:** elysium — Envs: dev=dawn, stg=dusk, prod=zenith — Region: usw
