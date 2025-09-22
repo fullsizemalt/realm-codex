@@ -46,6 +46,17 @@ nav:
     - System Map: framework/system-map.md
     - Refactor Program: framework/refactor.md
     - Modularity: framework/modularity.md
+  - Refactor Journey:
+    - Overview: refactor/overview.md
+    - Phases: refactor/phases.md
+    - Phase 1 Summary: phase1-summary.md
+    - Phase 2 Summary: phase2-summary.md
+    - Phase 3 Summary: phase3-summary.md
+    - Phase 4 Complete: PHASE4_COMPLETE.md
+    - Inventory: inventory.md
+  - Runbooks:
+    - Documentation Pipeline: runbooks/docs_pipeline_runbook.md
+    - Oracle API: runbooks/oracle-api.md
   - Standards:
     - Naming Conventions: standards/naming-conventions.md
   - Chronicle (Ops Journal): chronicle.md
