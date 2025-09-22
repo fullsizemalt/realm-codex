@@ -31,6 +31,13 @@ help:
 	@echo "  make find-duplicates             - Find duplicate files"
 	@echo "  make security-report             - Generate security/privacy report"
 	@echo ""
+	@echo "Cleanup & Decommission:"
+	@echo "  make service-audit               - Audit running services and containers"
+	@echo "  make quick-cleanup               - Quick cleanup of temp files and old downloads"
+	@echo "  make legacy-scan                 - Scan for legacy files and security risks"
+	@echo "  make cleanup-dead                - Remove dead files (dry-run by default)"
+	@echo "  make docker-cleanup              - Clean all Docker resources"
+	@echo ""
 	@echo "Observability:"
 	@echo "  make observability-start         - Start monitoring stack"
 	@echo "  make observability-stop          - Stop monitoring stack"
@@ -115,6 +122,26 @@ observability-stop:
 observability-status:
 	@echo "📊 Observability Stack Status:"
 	@docker-compose ps prometheus grafana loki promtail alertmanager
+
+# Phase 6: Cleanup & Decommission Commands
+service-audit:
+	@python3 scripts/service_audit.py
+
+quick-cleanup:
+	@python3 scripts/quick_cleanup.py
+
+legacy-scan:
+	@python3 scripts/legacy_scanner.py scan
+
+cleanup-dead:
+	@python3 scripts/legacy_scanner.py cleanup-dead
+
+docker-cleanup:
+	@echo "🐳 Cleaning Docker resources..."
+	@docker container prune -f
+	@docker image prune -f
+	@docker volume prune -f
+	@docker network prune -f
 
 # Legacy Commands
 weave:
