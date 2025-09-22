@@ -1,8 +1,8 @@
 site_name: The Realm Codex (Unified)
 site_description: A living grimoire joined with practical runbooks
-site_url: https://your-username.github.io/your-repo-name/
-repo_url: https://github.com/your-username/your-repo-name
-repo_name: GitHub
+site_url: https://fullsizemalt.github.io/realm-codex/
+repo_url: https://github.com/fullsizemalt/realm-codex
+repo_name: fullsizemalt/realm-codex
 edit_uri: edit/master/docs/
 theme:
   name: material

@@ -1,0 +1,1758 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A living grimoire joined with practical runbooks">
+      
+      
+      
+        <link rel="canonical" href="https://your-username.github.io/your-repo-name/runbooks/docs_pipeline_runbook/">
+      
+      
+        <link rel="prev" href="../../inventory/">
+      
+      
+        <link rel="next" href="../oracle-api/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Documentation Pipeline - The Realm Codex (Unified)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#runbook-documentation-realm-lore-pipeline" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The Realm Codex (Unified)" class="md-header__button md-logo" aria-label="The Realm Codex (Unified)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Realm Codex (Unified)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentation Pipeline
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/your-username/your-repo-name" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Realm Codex (Unified)" class="md-nav__button md-logo" aria-label="The Realm Codex (Unified)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The Realm Codex (Unified)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/your-username/your-repo-name" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prologue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lore
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lore
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lore/cosmology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cosmology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lore/naming-rites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Naming Rites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lore/rituals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rituals (Runbooks)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bestiary (Spirits)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bestiary (Spirits)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestiary/claude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Claude — Oracle of Clarity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestiary/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CodeX — Forge Sprite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestiary/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini — Twin Muse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bestiary/local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    House Spirits — Local LLMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Grimoire (Scripts)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Grimoire (Scripts)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grimoire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spellbook Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sanctum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sanctum (Security)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apps of the Realm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Practical Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Practical Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework/core-philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Philosophy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework/system-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework/refactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Refactor Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../framework/modularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modularity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Refactor Journey
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Refactor Journey
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refactor/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../refactor/phases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Phases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase1-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Phase 1 Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase2-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Phase 2 Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase3-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Phase 3 Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHASE4_COMPLETE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Phase 4 Complete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Runbooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Runbooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Documentation Pipeline
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentation Pipeline
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-local-live-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Local "Live Docs"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Local &#34;Live Docs&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-dev-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start Dev Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chronicle-appends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chronicle Appends
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-remote-publishing-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Remote Publishing (GitHub Pages)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Remote Publishing (GitHub Pages)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Config
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-realm-lore-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Realm Lore Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Realm Lore Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocsyml-nav-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs.yml nav block:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder Layout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-collaboration-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Collaboration &amp; Safety
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Collaboration &amp; Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-agents-claude-gemini-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules for Agents (Claude, Gemini, others)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-handoff-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Handoff Protocol
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oracle-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracle API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Standards
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/naming-conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Naming Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chronicle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chronicle (Ops Journal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-local-live-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Local "Live Docs"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Local &#34;Live Docs&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-dev-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start Dev Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chronicle-appends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chronicle Appends
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-remote-publishing-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Remote Publishing (GitHub Pages)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Remote Publishing (GitHub Pages)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Config
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-realm-lore-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Realm Lore Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Realm Lore Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocsyml-nav-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs.yml nav block:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder Layout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-collaboration-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Collaboration &amp; Safety
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Collaboration &amp; Safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-agents-claude-gemini-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules for Agents (Claude, Gemini, others)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-handoff-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Handoff Protocol
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="runbook-documentation-realm-lore-pipeline">Runbook: Documentation &amp; Realm Lore Pipeline<a class="headerlink" href="#runbook-documentation-realm-lore-pipeline" title="Permanent link">&para;</a></h1>
+<p><strong>Purpose:</strong><br />
+Keep the Realm Codex (MkDocs site) always current, integrating <strong>Chronicle entries</strong>, <strong>realm lore</strong>, and <strong>refactor docs</strong>, with clear gates for modification.</p>
+<hr />
+<h2 id="1-local-live-docs">1. Local "Live Docs"<a class="headerlink" href="#1-local-live-docs" title="Permanent link">&para;</a></h2>
+<h3 id="start-dev-server">Start Dev Server<a class="headerlink" href="#start-dev-server" title="Permanent link">&para;</a></h3>
+<p>From repo root:
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material<span class="w"> </span>pyyaml
+mkdocs<span class="w"> </span>serve<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span>.0.0.0:8000
+</code></pre></div></p>
+<p>→ Browse at http://localhost:8000<br />
+MkDocs auto-reloads on any change under <code>docs/</code>.</p>
+<h3 id="chronicle-appends">Chronicle Appends<a class="headerlink" href="#chronicle-appends" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Arcanum can append to <code>docs/chronicle.md</code> when <code>ARCANUM_APPEND_JOURNAL=true</code> in <code>.env</code>.</li>
+<li>With <code>mkdocs serve</code> running, those entries appear live in the Chronicle page.</li>
+</ul>
+<hr />
+<h2 id="2-remote-publishing-github-pages">2. Remote Publishing (GitHub Pages)<a class="headerlink" href="#2-remote-publishing-github-pages" title="Permanent link">&para;</a></h2>
+<h3 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h3>
+<p><code>.github/workflows/docs.yml</code>:
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Docs</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">main</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;docs/**&#39;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;mkdocs.yml&#39;</span>
+<span class="nt">permissions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<span class="w">  </span><span class="nt">pages</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="w">  </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.x&#39;</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install mkdocs-material</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs build --strict</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-pages-artifact@v3</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;site&#39;</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-pages</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ steps.deployment.outputs.page_url }}</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/deploy-pages@v4</span>
+</code></pre></div></p>
+<h3 id="github-config">GitHub Config<a class="headerlink" href="#github-config" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Repo → <strong>Settings → Pages → Source → GitHub Actions</strong>.</li>
+<li>Push to <code>main</code> with changes under <code>docs/</code> → workflow builds &amp; publishes.</li>
+</ul>
+<hr />
+<h2 id="3-realm-lore-structure">3. Realm Lore Structure<a class="headerlink" href="#3-realm-lore-structure" title="Permanent link">&para;</a></h2>
+<h3 id="mkdocsyml-nav-block"><code>mkdocs.yml</code> nav block:<a class="headerlink" href="#mkdocsyml-nav-block" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Realm Codex</span>
+<span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="nt">nav</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Realm Lore</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Overview</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lore/overview.md</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Naming</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lore/naming.md</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Spirits (Agents)</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lore/spirits.md</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Rites (Runbooks)</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lore/rites.md</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Chronicle (Ops Journal)</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chronicle.md</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Runbooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Arcanum Orchestrator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runbooks/ai-orchestrator.md</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Documentation Pipeline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runbooks/docs-pipeline.md</span>
+</code></pre></div>
+<h3 id="folder-layout">Folder Layout<a class="headerlink" href="#folder-layout" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docs/
+  index.md
+  chronicle.md
+  lore/
+    overview.md
+    naming.md
+    spirits.md
+    rites.md
+  runbooks/
+    ai-orchestrator.md
+    docs-pipeline.md
+</code></pre></div>
+<hr />
+<h2 id="4-collaboration-safety">4. Collaboration &amp; Safety<a class="headerlink" href="#4-collaboration-safety" title="Permanent link">&para;</a></h2>
+<h3 id="rules-for-agents-claude-gemini-others">Rules for Agents (Claude, Gemini, others)<a class="headerlink" href="#rules-for-agents-claude-gemini-others" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Do not overwrite <code>docs/chronicle.md</code> manually.</strong>  </li>
+<li>Chronicle entries are appended automatically via Arcanum or issue-close workflow.  </li>
+<li>
+<p>Manual edits must preserve existing front matter + history.</p>
+</li>
+<li>
+<p><strong>Realm lore (<code>docs/lore/*</code>) evolves narratively.</strong>  </p>
+</li>
+<li>
+<p>Gemini/Claude may propose edits, but changes must:</p>
+<ul>
+<li>Retain symbolic alignment with realm functions.</li>
+<li>Include metadata attribution.</li>
+</ul>
+</li>
+<li>
+<p><strong>Runbooks (<code>docs/runbooks/*</code>) are gated.</strong>  </p>
+</li>
+<li>Any PR changing <code>services/</code> must also update or create the corresponding runbook.  </li>
+<li>
+<p>Pre-commit + CI enforce metadata + attribution.</p>
+</li>
+<li>
+<p><strong>Publishing is via GitHub Pages workflow only.</strong>  </p>
+</li>
+<li>Agents must not bypass with custom deploys.  </li>
+<li>If workflow changes are proposed, they require human review.</li>
+</ol>
+<hr />
+<h2 id="5-verification">5. Verification<a class="headerlink" href="#5-verification" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Local:</strong>  </li>
+<li><code>mkdocs serve</code> reloads when <code>docs/</code> changes.  </li>
+<li>
+<p>New Chronicle entry visible in browser within seconds.</p>
+</li>
+<li>
+<p><strong>Remote:</strong>  </p>
+</li>
+<li>Push → GitHub Action runs → site updates at Pages URL.  </li>
+<li>Verify via Action logs + updated public site.</li>
+</ul>
+<hr />
+<h2 id="6-handoff-protocol">6. Handoff Protocol<a class="headerlink" href="#6-handoff-protocol" title="Permanent link">&para;</a></h2>
+<p>When an agent proposes a change to Realm documentation:</p>
+<ul>
+<li>Provide <strong>diff</strong> (<code>git diff</code>)  </li>
+<li>State <strong>intent</strong>: add lore, update runbook, refine nav, etc.  </li>
+<li>Confirm <strong>metadata</strong> present (<code>docs_metadata_lint.py</code>).  </li>
+<li>Include <strong>provenance</strong> in JSON message.</li>
+</ul>
+<p><strong>Example Arcanum handoff (to Claude):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="s2">&quot;claude&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="s2">&quot;summarize runbook changes&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;inputs&quot;</span><span class="p">:{</span><span class="nt">&quot;diff&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;patch&gt;&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;constraints&quot;</span><span class="p">:{</span><span class="nt">&quot;json_only&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="mi">256</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;provenance&quot;</span><span class="p">:[{</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;docs/runbooks/docs-pipeline.md&quot;</span><span class="p">,</span><span class="nt">&quot;why&quot;</span><span class="p">:</span><span class="s2">&quot;runbook update&quot;</span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">&quot;expected&quot;</span><span class="p">:</span><span class="s2">&quot;output.default&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;return&quot;</span><span class="p">:</span><span class="s2">&quot;json&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<p><strong>Attribution</strong><br />
+- Author: Archon<br />
+- Source: Runbook drafting session<br />
+- Description: Documenting docs/lore pipeline for safe agent collaboration</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
