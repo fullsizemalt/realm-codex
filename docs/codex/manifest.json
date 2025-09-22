@@ -1,0 +1,86 @@
+{
+  "generated_at": "2025-09-22T13:34:47.056374",
+  "content_types": {
+    "guides": {
+      "file_count": 1,
+      "size_kb": 0.1708984375,
+      "files": [
+        "guides/index.md"
+      ]
+    },
+    "references": {
+      "file_count": 3,
+      "size_kb": 4.982421875,
+      "files": [
+        "references/commands.md",
+        "references/configurations.md",
+        "references/index.md"
+      ]
+    },
+    "concepts": {
+      "file_count": 1,
+      "size_kb": 0.1669921875,
+      "files": [
+        "concepts/index.md"
+      ]
+    },
+    "examples": {
+      "file_count": 1,
+      "size_kb": 0.1748046875,
+      "files": [
+        "examples/index.md"
+      ]
+    },
+    "tools": {
+      "file_count": 21,
+      "size_kb": 11.6044921875,
+      "files": [
+        "tools/service_audit.md",
+        "tools/issue_to_chronicle.md",
+        "tools/codex_updater.md",
+        "tools/legacy_scanner.md",
+        "tools/provenance_scanner.md",
+        "tools/migrate_to_secrets.md",
+        "tools/new_refactor_task.md",
+        "tools/self_healing.md",
+        "tools/setup_cron.md",
+        "tools/gitops_deploy.md",
+        "tools/validate_config.md",
+        "tools/quick_cleanup.md",
+        "tools/media_manager.md",
+        "tools/content_ingester.md",
+        "tools/index.md",
+        "tools/agent_canary.md",
+        "tools/quota_gates.md",
+        "tools/agent_registry.md",
+        "tools/secrets_manager.md",
+        "tools/agent_quality_gates.md",
+        "tools/alert_manager.md"
+      ]
+    },
+    "troubleshooting": {
+      "file_count": 1,
+      "size_kb": 0.1669921875,
+      "files": [
+        "troubleshooting/index.md"
+      ]
+    },
+    "glossary": {
+      "file_count": 1,
+      "size_kb": 0.16015625,
+      "files": [
+        "glossary/index.md"
+      ]
+    },
+    "workflows": {
+      "file_count": 2,
+      "size_kb": 1.083984375,
+      "files": [
+        "workflows/refactor-guide.md",
+        "workflows/index.md"
+      ]
+    }
+  },
+  "total_files": 31,
+  "total_size_kb": 18.5107421875
+}

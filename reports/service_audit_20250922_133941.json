@@ -1,0 +1,966 @@
+{
+  "audit_results": {
+    "timestamp": "2025-09-22T13:39:33.287894",
+    "docker": {
+      "running_containers": [
+        {
+          "name": "realm-refactor-grafana-1",
+          "image": "grafana/grafana:11.2.0",
+          "status": "Up 2 hours (healthy)",
+          "ports": "0.0.0.0:3000->3000/tcp",
+          "created": "2025-09-22 11:57:35 -0700 PDT"
+        },
+        {
+          "name": "realm-refactor-promtail-1",
+          "image": "grafana/promtail:3.0.0",
+          "status": "Up 2 hours",
+          "ports": "",
+          "created": "2025-09-22 11:16:35 -0700 PDT"
+        },
+        {
+          "name": "realm-refactor-prometheus-1",
+          "image": "prom/prometheus:v2.54.1",
+          "status": "Up 2 hours (healthy)",
+          "ports": "0.0.0.0:9090->9090/tcp",
+          "created": "2025-09-22 11:16:35 -0700 PDT"
+        },
+        {
+          "name": "realm-refactor-alertmanager-1",
+          "image": "prom/alertmanager:v0.27.0",
+          "status": "Up 2 hours",
+          "ports": "0.0.0.0:9093->9093/tcp",
+          "created": "2025-09-22 11:16:35 -0700 PDT"
+        },
+        {
+          "name": "realm-refactor-loki-1",
+          "image": "grafana/loki:3.0.0",
+          "status": "Up 2 hours (healthy)",
+          "ports": "0.0.0.0:3100->3100/tcp",
+          "created": "2025-09-22 11:16:35 -0700 PDT"
+        }
+      ],
+      "stopped_containers": [],
+      "images": [
+        {
+          "repository": "ghcr.io/you/elysium-ai-arcanum-orchestrator",
+          "tag": "v0.1.0",
+          "size": "158MB",
+          "created": "2025-09-22 00:31:53 -0700 PDT"
+        },
+        {
+          "repository": "tinfoil-game-server-tinfoil-server",
+          "tag": "latest",
+          "size": "144MB",
+          "created": "2025-09-18 16:16:28 -0700 PDT"
+        },
+        {
+          "repository": "grafana/grafana",
+          "tag": "11.2.0",
+          "size": "478MB",
+          "created": "2024-08-27 06:56:08 -0700 PDT"
+        },
+        {
+          "repository": "prom/prometheus",
+          "tag": "v2.54.1",
+          "size": "275MB",
+          "created": "2024-08-27 04:20:46 -0700 PDT"
+        },
+        {
+          "repository": "grafana/loki",
+          "tag": "3.0.0",
+          "size": "80.4MB",
+          "created": "2024-04-08 12:22:00 -0700 PDT"
+        },
+        {
+          "repository": "grafana/promtail",
+          "tag": "3.0.0",
+          "size": "202MB",
+          "created": "2024-04-08 12:21:33 -0700 PDT"
+        },
+        {
+          "repository": "prom/alertmanager",
+          "tag": "v0.27.0",
+          "size": "70.3MB",
+          "created": "2024-02-28 03:58:27 -0800 PST"
+        }
+      ],
+      "volumes": [
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "com.docker.volume.anonymous=",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/95d5fd486dbaf19f842e2790203b776da5f5c7954ed8e830c16fd95ac1454c7e/_data",
+          "Name": "95d5fd486dbaf19f842e2790203b776da5f5c7954ed8e830c16fd95ac1454c7e",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        },
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "com.docker.volume.anonymous=",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/cb8e71668a5a7e96100c97f6f548fd1de2a5e0a6ff949cb4aaac7abe83d5a00d/_data",
+          "Name": "cb8e71668a5a7e96100c97f6f548fd1de2a5e0a6ff949cb4aaac7abe83d5a00d",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        },
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "com.docker.compose.version=2.22.0,com.docker.compose.volume=alertmanager_data,com.docker.compose.project=realm-refactor",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/realm-refactor_alertmanager_data/_data",
+          "Name": "realm-refactor_alertmanager_data",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        },
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "com.docker.compose.volume=grafana_data,com.docker.compose.project=realm-refactor,com.docker.compose.version=2.22.0",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/realm-refactor_grafana_data/_data",
+          "Name": "realm-refactor_grafana_data",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        },
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "com.docker.compose.volume=loki_data,com.docker.compose.project=realm-refactor,com.docker.compose.version=2.22.0",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/realm-refactor_loki_data/_data",
+          "Name": "realm-refactor_loki_data",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        },
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "com.docker.compose.volume=prometheus_data,com.docker.compose.project=realm-refactor,com.docker.compose.version=2.22.0",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/realm-refactor_prometheus_data/_data",
+          "Name": "realm-refactor_prometheus_data",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        }
+      ],
+      "networks": []
+    },
+    "processes": [
+      {
+        "command": "loginwind",
+        "pid": "181",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "ControlCe",
+        "pid": "391",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:64229",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:64229",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "192.168.50.76:64229->192.168.50.101:49181",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:3722",
+        "type": "network_service"
+      },
+      {
+        "command": "rapportd",
+        "pid": "414",
+        "user": "ten",
+        "connection": "*:3722",
+        "type": "network_service"
+      },
+      {
+        "command": "identitys",
+        "pid": "423",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "identitys",
+        "pid": "423",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "sharingd",
+        "pid": "470",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "CleanMyMa",
+        "pid": "479",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:57343",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:49206",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:57343->127.0.0.1:49205",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:27060",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:49208",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "*:27036",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "*:27036",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "192.168.50.76:54802->162.254.195.75:443",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:49208->127.0.0.1:49241",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:49206->127.0.0.1:49243",
+        "type": "network_service"
+      },
+      {
+        "command": "steam_osx",
+        "pid": "508",
+        "user": "ten",
+        "connection": "127.0.0.1:27060->127.0.0.1:49297",
+        "type": "network_service"
+      },
+      {
+        "command": "WiFiAgent",
+        "pid": "513",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "Steam\\x20",
+        "pid": "576",
+        "user": "ten",
+        "connection": "127.0.0.1:49205->127.0.0.1:57343",
+        "type": "network_service"
+      },
+      {
+        "command": "Steam\\x20",
+        "pid": "585",
+        "user": "ten",
+        "connection": "127.0.0.1:49241->127.0.0.1:49208",
+        "type": "network_service"
+      },
+      {
+        "command": "Steam\\x20",
+        "pid": "585",
+        "user": "ten",
+        "connection": "127.0.0.1:49243->127.0.0.1:49206",
+        "type": "network_service"
+      },
+      {
+        "command": "Steam\\x20",
+        "pid": "585",
+        "user": "ten",
+        "connection": "127.0.0.1:49297->127.0.0.1:27060",
+        "type": "network_service"
+      },
+      {
+        "command": "Raycast",
+        "pid": "595",
+        "user": "ten",
+        "connection": "127.0.0.1:7265",
+        "type": "network_service"
+      },
+      {
+        "command": "Syncthing",
+        "pid": "597",
+        "user": "ten",
+        "connection": "127.0.0.1:56080->127.0.0.1:8384",
+        "type": "network_service"
+      },
+      {
+        "command": "Syncthing",
+        "pid": "597",
+        "user": "ten",
+        "connection": "127.0.0.1:54797->127.0.0.1:8384",
+        "type": "network_service"
+      },
+      {
+        "command": "NewsToday",
+        "pid": "643",
+        "user": "ten",
+        "connection": "192.168.50.76:61418->17.253.1.203:443",
+        "type": "network_service"
+      },
+      {
+        "command": "com.docke",
+        "pid": "673",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "com.docke",
+        "pid": "673",
+        "user": "ten",
+        "connection": "*:3000",
+        "type": "network_service"
+      },
+      {
+        "command": "com.docke",
+        "pid": "673",
+        "user": "ten",
+        "connection": "*:3100",
+        "type": "network_service"
+      },
+      {
+        "command": "com.docke",
+        "pid": "673",
+        "user": "ten",
+        "connection": "*:9093",
+        "type": "network_service"
+      },
+      {
+        "command": "com.docke",
+        "pid": "673",
+        "user": "ten",
+        "connection": "*:9090",
+        "type": "network_service"
+      },
+      {
+        "command": "com.docke",
+        "pid": "673",
+        "user": "ten",
+        "connection": "127.0.0.1:3000->127.0.0.1:56364",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "127.0.0.1:8384->127.0.0.1:56080",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "127.0.0.1:8384",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "*:55132",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "*:22000",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "*:21027",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "*:21027",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "*:22000",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "192.168.50.76:58738->103.214.71.33:22067",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "192.168.50.76:53375->142.91.105.40:22067",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "*:57517",
+        "type": "network_service"
+      },
+      {
+        "command": "syncthing",
+        "pid": "793",
+        "user": "ten",
+        "connection": "127.0.0.1:8384->127.0.0.1:54797",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61297->45.87.251.133:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61107->140.82.112.26:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61337->172.64.151.87:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:54859->185.70.42.36:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61338->172.64.151.87:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:64543->67.217.57.230:42069",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61422->45.87.251.183:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:60720->34.197.102.186:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61423->45.87.251.183:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:54883->45.87.251.133:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:59242->104.18.39.21:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:60727->34.107.243.93:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "127.0.0.1:56364->127.0.0.1:3000",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:59589->45.87.251.183:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61109->142.250.72.227:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61087->142.250.72.138:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61425->151.101.1.91:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:56561->67.217.56.75:2222",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61433->45.87.251.185:9284",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61434->45.87.251.185:9284",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:61435->45.87.251.185:9284",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:64440->45.56.82.212:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:59851->172.64.41.4:443",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:64438->45.87.251.133:9909",
+        "type": "network_service"
+      },
+      {
+        "command": "zen",
+        "pid": "1466",
+        "user": "ten",
+        "connection": "192.168.50.76:64439->45.87.251.185:9284",
+        "type": "network_service"
+      },
+      {
+        "command": "Obsidian",
+        "pid": "5402",
+        "user": "ten",
+        "connection": "192.168.50.76:61405->104.26.0.147:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Obsidian",
+        "pid": "5402",
+        "user": "ten",
+        "connection": "192.168.50.76:61406->185.199.109.133:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Obsidian",
+        "pid": "5404",
+        "user": "ten",
+        "connection": "*:37042",
+        "type": "network_service"
+      },
+      {
+        "command": "Claude",
+        "pid": "5409",
+        "user": "ten",
+        "connection": "192.168.50.76:59819->18.97.36.6:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Claude",
+        "pid": "5409",
+        "user": "ten",
+        "connection": "192.168.50.76:61430->3.231.99.3:443",
+        "type": "network_service"
+      },
+      {
+        "command": "ControlCe",
+        "pid": "6154",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "assistant",
+        "pid": "8664",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "Cursor",
+        "pid": "9171",
+        "user": "ten",
+        "connection": "192.168.50.76:59749->67.202.0.221:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Cursor",
+        "pid": "9171",
+        "user": "ten",
+        "connection": "192.168.50.76:61091->104.18.19.125:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Cursor",
+        "pid": "9361",
+        "user": "ten",
+        "connection": "127.0.0.1:33934",
+        "type": "network_service"
+      },
+      {
+        "command": "Cursor",
+        "pid": "9361",
+        "user": "ten",
+        "connection": "192.168.50.76:60566->52.70.47.171:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Cursor",
+        "pid": "9361",
+        "user": "ten",
+        "connection": "192.168.50.76:57824->3.230.232.81:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Cursor",
+        "pid": "9361",
+        "user": "ten",
+        "connection": "192.168.50.76:64713->104.18.19.125:443",
+        "type": "network_service"
+      },
+      {
+        "command": "WeatherWi",
+        "pid": "10219",
+        "user": "ten",
+        "connection": "192.168.50.76:57822->23.67.33.217:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Python",
+        "pid": "10710",
+        "user": "ten",
+        "connection": "*:8000",
+        "type": "network_service"
+      },
+      {
+        "command": "node",
+        "pid": "11532",
+        "user": "ten",
+        "connection": "192.168.50.76:61393->34.36.57.103:443",
+        "type": "network_service"
+      },
+      {
+        "command": "node",
+        "pid": "11532",
+        "user": "ten",
+        "connection": "192.168.50.76:61413->34.36.57.103:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Comet",
+        "pid": "20882",
+        "user": "ten",
+        "connection": "*:*",
+        "type": "network_service"
+      },
+      {
+        "command": "Comet\\x20",
+        "pid": "20892",
+        "user": "ten",
+        "connection": "192.168.50.76:57416->34.104.35.123:80",
+        "type": "network_service"
+      },
+      {
+        "command": "stable",
+        "pid": "85413",
+        "user": "ten",
+        "connection": "192.168.50.76:54795->34.120.195.249:443",
+        "type": "network_service"
+      },
+      {
+        "command": "stable",
+        "pid": "85413",
+        "user": "ten",
+        "connection": "192.168.50.76:61334->142.251.40.42:443",
+        "type": "network_service"
+      },
+      {
+        "command": "stable",
+        "pid": "85413",
+        "user": "ten",
+        "connection": "192.168.50.76:61017->34.117.41.85:443",
+        "type": "network_service"
+      },
+      {
+        "command": "stable",
+        "pid": "85413",
+        "user": "ten",
+        "connection": "127.0.0.1:9277",
+        "type": "network_service"
+      },
+      {
+        "command": "stable",
+        "pid": "85413",
+        "user": "ten",
+        "connection": "192.168.50.76:61335->34.117.41.85:443",
+        "type": "network_service"
+      }
+    ],
+    "brew_services": [
+      {
+        "name": "php",
+        "status": "none",
+        "user": "",
+        "plist": ""
+      },
+      {
+        "name": "postgresql@15",
+        "status": "none",
+        "user": "",
+        "plist": ""
+      },
+      {
+        "name": "unbound",
+        "status": "none",
+        "user": "",
+        "plist": ""
+      }
+    ]
+  },
+  "decommission_plan": {
+    "immediate_actions": [],
+    "review_candidates": [],
+    "keep_services": [
+      {
+        "name": "realm-refactor-grafana-1",
+        "reason": "Part of observability stack",
+        "image": "grafana/grafana:11.2.0"
+      },
+      {
+        "name": "realm-refactor-promtail-1",
+        "reason": "Part of observability stack",
+        "image": "grafana/promtail:3.0.0"
+      },
+      {
+        "name": "realm-refactor-prometheus-1",
+        "reason": "Part of observability stack",
+        "image": "prom/prometheus:v2.54.1"
+      },
+      {
+        "name": "realm-refactor-alertmanager-1",
+        "reason": "Part of observability stack",
+        "image": "prom/alertmanager:v0.27.0"
+      },
+      {
+        "name": "realm-refactor-loki-1",
+        "reason": "Part of observability stack",
+        "image": "grafana/loki:3.0.0"
+      }
+    ]
+  }
+}
