@@ -1,6 +1,6 @@
 # System Status
 
-**Last Updated**: 2025-09-22 13:39:41
+**Last Updated**: 2025-09-23 06:17:56 UTC
 
 ## 🎯 Current State
 
@@ -16,17 +16,12 @@
 - **Canary Deployments**: Ready
 - **Cost Control**: Zero API costs (mock responses)
 
-### Media Management
-- **Cataloging**: SQLite-based with checksums
-- **Security Scanning**: Automated provenance tracking
-- **Storage Optimization**: Quota management active
-
 ### Documentation
 - **Live Site**: https://fullsizemalt.github.io/realm-codex/
 - **Auto-Deploy**: GitHub Actions enabled
-- **Last Deploy**: 2025-09-22 13:39:41
+- **Last Deploy**: 2025-09-23 06:17:56 UTC
 
-## 📊 Quick Stats
+## 📊 Quick Commands
 
 ```bash
 # Check system health
@@ -42,10 +37,5 @@ make quota-check
 make security-report
 ```
 
-## 🔄 Automated Updates
-
-This page is automatically updated by the codex update system.
-Run `make codex-update` to refresh all system documentation.
-
 ---
-*Generated automatically by codex_updater.py*
+*Auto-updated by GitHub Actions*

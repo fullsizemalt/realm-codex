@@ -1,6 +1,6 @@
 # Operations Guide
 
-**Updated**: 2025-09-22
+**Updated**: 2025-09-23
 
 ## 🚀 Daily Operations
 
@@ -34,7 +34,7 @@ make agents-quality        # Validate AI agents
 
 ### Auto-Updates
 - **Documentation**: Commits auto-deploy to GitHub Pages
-- **Reports**: Generated daily via codex updater
+- **Reports**: Generated daily via GitHub Actions
 - **Monitoring**: Continuous via Prometheus alerts
 
 ### Manual Updates
@@ -42,11 +42,5 @@ make agents-quality        # Validate AI agents
 make codex-update          # Full system update
 ```
 
-## 📚 Reference
-
-- [Phase Summaries](../refactor/)
-- [System Status](../system-status.md)
-- [Changelog](../CHANGELOG.md)
-
 ---
-*This guide is automatically maintained by the codex update system.*
+*Auto-maintained by GitHub Actions*
