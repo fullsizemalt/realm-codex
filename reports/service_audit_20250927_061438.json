@@ -1,0 +1,125 @@
+{
+  "audit_results": {
+    "timestamp": "2025-09-27T06:14:38.023680",
+    "docker": {
+      "running_containers": [
+        {
+          "name": "buildx_buildkit_builder-0301bd6b-5529-4a1b-b8bb-db52342042230",
+          "image": "moby/buildkit:buildx-stable-1",
+          "status": "Up 1 second",
+          "ports": "",
+          "created": "2025-09-27 06:14:36 +0000 UTC"
+        }
+      ],
+      "stopped_containers": [],
+      "images": [
+        {
+          "repository": "moby/buildkit",
+          "tag": "buildx-stable-1",
+          "size": "221MB",
+          "created": "2025-09-03 14:03:12 +0000 UTC"
+        }
+      ],
+      "volumes": [
+        {
+          "Availability": "N/A",
+          "Driver": "local",
+          "Group": "N/A",
+          "Labels": "",
+          "Links": "N/A",
+          "Mountpoint": "/var/lib/docker/volumes/buildx_buildkit_builder-0301bd6b-5529-4a1b-b8bb-db52342042230_state/_data",
+          "Name": "buildx_buildkit_builder-0301bd6b-5529-4a1b-b8bb-db52342042230_state",
+          "Scope": "local",
+          "Size": "N/A",
+          "Status": "N/A"
+        }
+      ],
+      "networks": []
+    },
+    "processes": [
+      {
+        "command": "hosted-co",
+        "pid": "1881",
+        "user": "runner",
+        "connection": "10.1.0.220:41648->20.75.202.224:443",
+        "type": "network_service"
+      },
+      {
+        "command": "hosted-co",
+        "pid": "1881",
+        "user": "runner",
+        "connection": "10.1.0.220:52516->169.254.169.254:80",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Li",
+        "pid": "1924",
+        "user": "runner",
+        "connection": "10.1.0.220:48814->20.85.130.105:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Li",
+        "pid": "1924",
+        "user": "runner",
+        "connection": "10.1.0.220:40268->20.85.130.105:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Li",
+        "pid": "1924",
+        "user": "runner",
+        "connection": "10.1.0.220:40278->20.85.130.105:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Wo",
+        "pid": "1939",
+        "user": "runner",
+        "connection": "10.1.0.220:42308->140.82.112.22:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Wo",
+        "pid": "1939",
+        "user": "runner",
+        "connection": "10.1.0.220:54670->140.82.114.22:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Wo",
+        "pid": "1939",
+        "user": "runner",
+        "connection": "10.1.0.220:46972->140.82.113.21:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Wo",
+        "pid": "1939",
+        "user": "runner",
+        "connection": "10.1.0.220:54656->140.82.114.22:443",
+        "type": "network_service"
+      },
+      {
+        "command": "Runner.Wo",
+        "pid": "1939",
+        "user": "runner",
+        "connection": "10.1.0.220:37568->20.150.88.228:443",
+        "type": "network_service"
+      }
+    ],
+    "brew_services": []
+  },
+  "decommission_plan": {
+    "immediate_actions": [],
+    "review_candidates": [
+      {
+        "name": "buildx_buildkit_builder-0301bd6b-5529-4a1b-b8bb-db52342042230",
+        "image": "moby/buildkit:buildx-stable-1",
+        "status": "Up 1 second",
+        "reason": "Review if still needed"
+      }
+    ],
+    "keep_services": []
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-09-27T06:14:38.269327",
+  "timestamp": "2025-09-27T06:14:37.688018",
   "system_status": {
     "observability_stack": {
       "status": "error",
@@ -15,11 +15,19 @@
     "agent_status": {
       "registry_exists": true,
       "agent_count": 2,
-      "last_updated": "2025-09-27T06:14:38.262617"
+      "last_updated": "2025-09-26T06:17:21.347090"
     }
   },
-  "uptime": "06:14:38 up 0 min,  0 user,  load average: 0.58, 0.14, 0.05",
-  "resource_usage": {
-    "error": "could not retrieve resource usage"
-  }
+  "generated_reports": [
+    "service_audit",
+    "media_inventory",
+    "security_report"
+  ],
+  "documentation_updates": [
+    "system-status.md",
+    "operations/index.md",
+    "CHANGELOG.md"
+  ],
+  "git_changes": [],
+  "errors": []
 }
